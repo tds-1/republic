@@ -1,1 +1,1 @@
-web: gunicorn deepesh:app --log-file -
+web: gunicorn deepesh.wsgi --log-file -
