@@ -1,0 +1,429 @@
+<html>
+
+<head>
+    <style>
+        *,
+        *::after,
+        *::before {
+            box-sizing: inherit;
+        }
+
+        body {
+            font-family: "Montserrat";
+            background: #f2f2f2;
+            font-size: 14px;
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 800px;
+            min-width: 640px;
+            margin: 0 auto;
+        }
+
+        .column {
+            width: 50%;
+            float: left;
+            padding: 0 25px;
+        }
+
+        .title {
+            color: #666666;
+            text-transform: uppercase;
+        }
+
+        .post-card {
+            position: relative;
+            box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
+            background: #fff;
+
+            width: 700px;
+            height: 900px;
+        }
+
+        .post-card:hover,
+        .hover {
+            -webkit-box-shadow: 0px 1px 35px 0px rgba(0, 0, 0, 0.3);
+            -moz-box-shadow: 0px 1px 35px 0px rgba(0, 0, 0, 0.3);
+            box-shadow: 0px 1px 35px 0px rgba(0, 0, 0, 0.3);
+        }
+
+        .post-card:hover .post-img,
+        .hover .post-img {
+            -webkit-transform: scale(1.1);
+            -moz-transform: scale(1.1);
+            transform: scale(1.1);
+            opacity: 0.8;
+        }
+
+        .post-img {
+            height: 800px;
+            overflow: hidden;
+        }
+
+        .post-card img {
+            display: block;
+            width: 135%;
+        }
+
+        .date {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 1;
+            background: #ec1d06;
+            width: 55px;
+            height: 55px;
+            border-radius: 100%;
+            color: #ffffff;
+            text-align: center;
+            padding: 12.5px 0;
+        }
+
+        .post-content {
+            position: absolute;
+            bottom: 0;
+            background: #ffffff;
+            width: 100%;
+            padding: 30px;
+        }
+
+        .category {
+            position: absolute;
+            top: -34px;
+            left: 0;
+            background: #e74c3c;
+            padding: 10px 15px;
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .title {
+            margin: 0;
+            padding: 0 0 10px;
+            color: #333333;
+            font-size: 26px;
+            font-weight: 700;
+        }
+
+        .sub_title {
+            margin: 0;
+            padding: 0 0 20px;
+            color: #e74c3c;
+            font-size: 20px;
+            font-weight: 400;
+        }
+
+        .description {
+            color: #666666;
+            font-size: 14px;
+            line-height: 1.8em;
+            display: none;
+        }
+
+        .up-title {
+            margin: 0 0 15px;
+            color: #666666;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .hover .post-content .description {
+            display: block !important;
+            height: auto !important;
+            opacity: 1 !important;
+        }
+
+        .post-meta {
+            margin: 30px 0 0;
+            color: #999999;
+        }
+
+        .timestamp {
+            margin: 0 16px 0 0;
+        }
+
+        .post-meta a {
+            color: #999999;
+            text-decoration: none;
+        }
+
+
+        @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
+
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            font-family: "Roboto", sans-serif;
+            font-size: 0.925rem;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            width: 1170px;
+            position: relative;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        .navbar,
+        .navbar .container {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        @media (max-width: 768px) {
+
+            .navbar,
+            .navbar .container {
+                display: block;
+            }
+        }
+
+        .navbar {
+            padding: 1.15rem 1rem;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.035);
+            background-color: #fff;
+            /*
+  |-----------------------------------
+  | Start navbar logo or brand etc..
+  |-----------------------------------
+  */
+            /*
+  |-----------------------------------
+  | Start navbar menu
+  |-----------------------------------
+  */
+        }
+
+        @media (min-width: 576px) {
+            .navbar .container {
+                max-width: 540px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .navbar .container {
+                max-width: 720px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .navbar .container {
+                max-width: 960px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .navbar .container {
+                max-width: 1140px;
+            }
+        }
+
+        .navbar .navbar-header {
+            display: flex;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .navbar .navbar-header {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-direction: row-reverse;
+            }
+        }
+
+        .navbar .navbar-header .navbar-toggler {
+            border-radius: 5px;
+            background-color: transparent;
+            cursor: pointer;
+            border: none;
+            display: none;
+            outline: none;
+        }
+
+        @media (max-width: 768px) {
+            .navbar .navbar-header .navbar-toggler {
+                display: block;
+            }
+        }
+
+        .navbar .navbar-header .navbar-toggler span {
+            height: 2px;
+            width: 22px;
+            background-color: #929aad;
+            display: block;
+        }
+
+        .navbar .navbar-header .navbar-toggler span:not(:last-child) {
+            margin-bottom: 0.2rem;
+        }
+
+        .navbar .navbar-header>a {
+            font-weight: 500;
+            color: #3c4250;
+        }
+
+        .navbar .navbar-menu {
+            display: flex;
+            flex-basis: auto;
+            flex-grow: 1;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .navbar .navbar-menu {
+                display: none;
+                text-align: center;
+            }
+        }
+
+        .navbar .navbar-menu .navbar-nav {
+            margin-left: auto;
+            flex-direction: row;
+            display: flex;
+            padding-left: 0;
+            margin-bottom: 0;
+            list-style: none;
+        }
+
+        @media (max-width: 768px) {
+            .navbar .navbar-menu .navbar-nav {
+                width: 100%;
+                display: block;
+                border-top: 1px solid #EEE;
+                margin-top: 1rem;
+            }
+        }
+
+        .navbar .navbar-menu .navbar-nav>li>a {
+            color: #3c4250;
+            text-decoration: none;
+            display: inline-block;
+            padding: 0.5rem 1rem;
+        }
+
+        .navbar .navbar-menu .navbar-nav>li>a:hover {
+            color: #66f;
+        }
+
+        @media (max-width: 768px) {
+            .navbar .navbar-menu .navbar-nav>li>a {
+                border-bottom: 1px solid #EEE;
+            }
+        }
+
+        .navbar .navbar-menu .navbar-nav>li.active a {
+            color: #66f;
+        }
+
+        .navbar .navbar-menu .navbar-nav .navbar-dropdown .dropdown {
+            list-style: none;
+            position: absolute;
+            top: 150%;
+            left: 0;
+            background-color: #fff;
+            padding: 0.5rem 0;
+            min-width: 160px;
+            width: auto;
+            white-space: nowrap;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+            z-index: 99999;
+            border-radius: 0.75rem;
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .navbar .navbar-menu .navbar-nav .navbar-dropdown .dropdown {
+                position: relative;
+                box-shadow: none;
+            }
+        }
+
+        .navbar .navbar-menu .navbar-nav .navbar-dropdown .dropdown li a {
+            color: #3c4250;
+            padding: 0.25rem 1rem;
+            display: block;
+        }
+
+        .navbar .navbar-menu .navbar-nav .navbar-dropdown .dropdown.show {
+            display: block !important;
+        }
+
+        .navbar .navbar-menu .navbar-nav .dropdown>.separator {
+            height: 1px;
+            width: 100%;
+            margin: 9px 0;
+            background-color: #eee;
+        }
+
+        .navbar .navbar-dropdown {
+            position: relative;
+        }
+
+        .navbar .navbar-header>a span {
+            color: #66f;
+        }
+
+        .navbar .navbar-header h4 {
+            font-weight: 500;
+            font-size: 1.25rem;
+        }
+
+        @media (max-width: 768px) {
+            .navbar .navbar-header h4 {
+                font-size: 1.05rem;
+            }
+        }
+    </style>
+
+</head>
+
+<body style="background-image: url('https://i.ibb.co/m6b6CDv/Whats-App-Image-2021-01-15-at-21-51-38.jpg');    background-blend-mode: exclusion;  ">
+    <div class="container" style="padding-top: 50px;">
+
+        <div class="column">
+            <div class="post-card hover">
+                <div class="post-img">
+                    <div class="date">
+                        <div class="day">15</div>
+                        <div class="month">Aug</div>
+                    </div>
+                    <img
+                        src="https://images.unsplash.com/photo-1467307983825-619715426c70?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=fae278c7b8eeffec370bda6e42f5a827" />
+                </div>
+                <div class="post-content">
+                    <div class="category">Photos</div>
+                    <h1 class="title">India </h1>
+                    <h2 class="sub_title">An upcoming superpower</h2>
+                    <p class="description">India is a vast South Asian country with diverse terrain – from Himalayan
+                        peaks to Indian Ocean coastline – and history reaching back 5 millennia.</p>
+                    <div class="post-meta"><span class="timestamp"><i class="fa fa-clock-o"></i> 6 mins
+                            ago</span><span class="comments"><i class="fa fa-comments"></i><a href="#"> 39
+                                comments</a></span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
